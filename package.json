@@ -1,0 +1,26 @@
+{
+  "name": "flight-surety",
+  "version": "0.1.0",
+  "description": "Final project of Udacity Blockchain Developer Nanodegree program, flight insurance application based on smart contracts run on blockchain.",
+  "main": "index.js",
+  "scripts": {
+    "test": "truffle test --compile-none --debug ./test/flightSurety.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muratgozel/flight-surety.git"
+  },
+  "author": "Murat Gözel <murat@gozel.com.tr>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/muratgozel/flight-surety/issues"
+  },
+  "homepage": "https://github.com/muratgozel/flight-surety#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.7.3",
+    "@truffle/hdwallet-provider": "^2.1.0",
+    "bignumber.js": "^9.1.0",
+    "truffle": "^5.6.3",
+    "web3": "^1.8.0"
+  }
+}
