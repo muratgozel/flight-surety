@@ -3,8 +3,14 @@ const FlightSuretyData = artifacts.require("FlightSuretyData");
 const fs = require('fs');
 
 module.exports = async function(deployer, network, accounts) {
-    await deployer.deploy(FlightSuretyData, accounts[1])
-    await deployer.deploy(FlightSuretyApp, FlightSuretyData.address)
+    await deployer.deploy(FlightSuretyData, accounts[1], {from: accounts[0]})
+    await deployer.deploy(FlightSuretyApp, FlightSuretyData.address, {from: accounts[0]})
+
+    const flightSuretyData = await FlightSuretyData.deployed()
+    await flightSuretyData.authorizeCaller(FlightSuretyApp.address)
+
+    const flightSuretyApp = await FlightSuretyApp.deployed()
+    await flightSuretyApp.fundAirline(accounts[1], {value: web3.utils.toWei("20", "ether")})
 
     const config = {
         localhost: {

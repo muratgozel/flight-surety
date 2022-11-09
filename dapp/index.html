@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Flight Surety</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Flight Surety</h1>
+      <p>Flight delay insurance based on smart contracts run on blockchain.</p>
+    </header>
+
+    <section>
+      <h2>Status</h2>
+      <p>Smart contract is <span id="system-status" style="font-weight: 700;"></span></p>
+    </section>
+
+    <section>
+      <h2>Register An Airline</h2>
+      <form name="register-airline">
+        <div class="input">
+          <label for="airline">Airline</label>
+          <input type="text" name="airline" id="airline" placeholder="Enter ETH address.">
+        </div>
+        <div class="input">
+          <label for="register-airline-from">Message Sender</label><small>Try various options below to see how contract will answer.</small>
+          <select name="from" id="register-airline-from"><option value="">Loading...</option></select>
+        </div>
+        <a class="btn" id="register-airline" href="#">Register</a> <span class="result-msg"></span>
+      </form>
+    </section>
+
+    <section>
+      <h2>Register A Flight</h2>
+      <form name="register-flight">
+        <div class="input">
+          <label for="flight-airline">Airline</label>
+          <select name="airline" id="flight-airline"><option value="">Loading...</option></select>
+        </div>
+        <div class="input">
+          <label for="flight-num">Flight Number</label>
+          <input type="text" name="code" id="flight-num" placeholder="ABC123">
+        </div>
+        <div class="input">
+          <label for="departure-time">Departure Time</label>
+          <input type="text" name="departure" id="departure-time">
+        </div>
+        <div class="input">
+          <label for="register-flight-from">Message Sender</label><small>Try various options below to see how contract will answer.</small>
+          <select name="from" id="register-flight-from"><option value="">Loading...</option></select>
+        </div>
+        <a class="btn" id="register-flight" href="#">Register</a> <span class="result-msg"></span>
+      </form>
+    </section>
+
+    <section>
+      <h2>Flight Status Check</h2>
+      <form name="flight-status-check">
+        <div class="input">
+          <label for="code">Flight Number</label>
+          <input type="text" name="code" id="code" placeholder="ABC123">
+        </div>
+        <a class="btn" id="submit-oracle" href="#">Submit to Oracles</a> <span class="result-msg"></span>
+      </form>
+    </section>
+
+    <section>
+      <h2>Buy Insurance</h2>
+      <form name="buy-insurance">
+        <div class="input">
+          <label for="flights">Flights</label>
+          <select name="code" id="flights"><option value="">Loading...</option></select>
+        </div>
+        <div class="input">
+          <label for="amount">Amount (up to 1 ether)</label>
+          <input type="text" name="amount" id="amount" placeholder="0.123 ether">
+        </div>
+        <div class="input">
+          <label for="passenger">Passenger</label>
+          <select name="passenger" id="passenger"><option value="">Loading...</option></select>
+        </div>
+        <a class="btn" id="buy-insurance" href="#">Buy</a> <span class="result-msg"></span>
+      </form>
+    </section>
+
+    <section>
+      <h2>Withdraw</h2>
+      <form name="withdraw">
+        <div class="input">
+          <label for="from">Passenger (Message Sender)</label>
+          <select name="passenger" id="from"><option value="">Loading...</option></select>
+        </div>
+        <a class="btn" id="withdraw" href="#">Withdraw</a> <span class="result-msg"></span>
+      </form>
+    </section>
+
+    <section class="footer">
+      <div>
+        <p>This is the final project of Udacity Blockchain Developer Nanodegree program.</p>
+        <p>Created by Murat Gözel. Source code can be found <a href="https://github.com/muratgozel/flight-surety" target="_blank">here</a>.</p>
+      </div>
+    </section>
+
+    <script type="module" src="dapp.js"></script>
+  </body>
+</html>

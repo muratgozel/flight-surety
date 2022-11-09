@@ -1,10 +1,18 @@
 {
   "name": "flight-surety",
   "version": "0.1.0",
-  "description": "Final project of Udacity Blockchain Developer Nanodegree program, flight insurance application based on smart contracts run on blockchain.",
+  "description": "Final project of Udacity Blockchain Developer Nanodegree program, flight delay insurance application based on smart contracts run on blockchain.",
   "main": "index.js",
   "scripts": {
-    "test": "truffle test --compile-none --debug ./test/flightSurety.js"
+    "compile": "truffle compile",
+    "migrate": "truffle migrate",
+    "test": "truffle test --compile-none --debug ./test/flightSurety.js",
+    "dapp": "vite",
+    "dapp:build": "vite build",
+    "dapp:preview": "vite preview",
+    "dapp:prod": "npm run dapp:build && npm run dapp:preview",
+    "server": "nodemon ./server/server.js",
+    "server:prod": "node ./server/server.js"
   },
   "repository": {
     "type": "git",
@@ -16,11 +24,12 @@
     "url": "https://github.com/muratgozel/flight-surety/issues"
   },
   "homepage": "https://github.com/muratgozel/flight-surety#readme",
-  "dependencies": {
+  "devDependencies": {
     "@openzeppelin/contracts": "^4.7.3",
     "@truffle/hdwallet-provider": "^2.1.0",
-    "bignumber.js": "^9.1.0",
+    "nodemon": "^2.0.20",
     "truffle": "^5.6.3",
+    "vite": "^3.2.2",
     "web3": "^1.8.0"
   }
 }
